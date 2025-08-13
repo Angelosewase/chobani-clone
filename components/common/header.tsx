@@ -38,7 +38,7 @@ export function Header() {
     >
       {/* Main header */}
       <div className="relative">
-        <div className="flex items-center justify-between px-6 py-2 mx-auto">
+        <div className="flex items-center justify-between px-12 py-4 mx-auto">
           {/* Left Navigation */}
           <nav className="flex items-center space-x-8">
             <button
@@ -53,7 +53,7 @@ export function Header() {
             </button>
             <Button
               variant="outline"
-              className="border-gray-400 text-gray-700 hover:bg-gray-50 rounded-sm px-4 py-2 text-sm font-medium bg-transparent"
+              className="border-gray-400 text-gray-700 hover:bg-gray-50 rounded-sm px-4 py-2  font-medium bg-transparent"
             >
               Where to buy
             </Button>
@@ -68,16 +68,16 @@ export function Header() {
 
           {/* Right Navigation */}
           <nav className="flex items-center space-x-8">
-            <button className="text-gray-700 hover:text-gray-900 font-medium">
+            <button className="text-gray-700 hover:text-gray-900 font-medium text-lg">
               About
             </button>
-            <button className="text-gray-700 hover:text-gray-900 font-medium">
+            <button className="text-gray-700 hover:text-gray-900 font-medium text-lg">
               Impact
             </button>
-            <button className="text-gray-700 hover:text-gray-900 font-medium">
+            <button className="text-gray-700 hover:text-gray-900 font-medium text-lg">
               Log in
             </button>
-            <button className="text-gray-700 hover:text-gray-900">
+            <button className="text-gray-700 hover:text-gray-900 text-lg">
               <Search className="w-5 h-5" />
             </button>
           </nav>
@@ -109,14 +109,14 @@ export function Header() {
               </div>
               <div className="text-center">
                 <h3 className="font-bold text-gray-800 mb-2">Latest Picks</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1  text-gray-600">
                   <li>Seasonal</li>
                   <li>Yogurt</li>
                   <li>Drinks</li>
                   <li>Creamers</li>
                   <li>High Protein</li>
                 </ul>
-                <button className="text-blue-600 text-sm font-medium mt-2 hover:underline">
+                <button className="text-blue-600  font-medium mt-2 hover:underline">
                   SEE ALL LATEST PICKS
                 </button>
               </div>
@@ -135,7 +135,7 @@ export function Header() {
               </div>
               <div className="text-center">
                 <h3 className="font-bold text-gray-800 mb-2">Oatmilk</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1  text-gray-600">
                   <li>Oatmilk</li>
                 </ul>
               </div>
@@ -154,7 +154,7 @@ export function Header() {
               </div>
               <div className="text-center">
                 <h3 className="font-bold text-gray-800 mb-2">Greek Yogurt</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1  text-gray-600">
                   <li>High Protein</li>
                   <li>Flip®</li>
                   <li>Less Sugar*</li>
@@ -162,7 +162,7 @@ export function Header() {
                   <li>Creations™</li>
                   <li>Greek Yogurt</li>
                 </ul>
-                <button className="text-blue-600 text-sm font-medium mt-2 hover:underline">
+                <button className="text-blue-600  font-medium mt-2 hover:underline">
                   SEE ALL GREEK YOGURT
                 </button>
               </div>
@@ -183,11 +183,11 @@ export function Header() {
                 <h3 className="font-bold text-gray-800 mb-2">
                   Greek Yogurt Drinks
                 </h3>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1  text-gray-600">
                   <li>High Protein</li>
                   <li>Greek Yogurt</li>
                 </ul>
-                <button className="text-blue-600 text-sm font-medium mt-2 hover:underline">
+                <button className="text-blue-600  font-medium mt-2 hover:underline">
                   SEE ALL GREEK YOGURT DRINKS
                 </button>
               </div>
@@ -206,11 +206,11 @@ export function Header() {
               </div>
               <div className="text-center">
                 <h3 className="font-bold text-gray-800 mb-2">Creamers</h3>
-                <ul className="space-y-1 text-sm  text-gray-600">
+                <ul className="space-y-1   text-gray-600">
                   <li>Dairy</li>
                   <li>Zero Sugar*</li>
                 </ul>
-                <button className="text-blue-600 text-sm font-medium mt-2 hover:underline">
+                <button className="text-blue-600  font-medium mt-2 hover:underline">
                   SEE ALL CREAMERS
                 </button>
               </div>

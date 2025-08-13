@@ -117,15 +117,6 @@
     @apply border-border outline-ring/50;
   }
   
-  html {
-    /* Set 125% scale globally */
-    /* zoom: 1.1; */
-    /* Alternative approach using transform (uncomment if zoom doesn't work) */
-    /* transform: scale(1.25);
-    transform-origin: 0 0;
-    width: 80%; 
-    height: 80%; */
-  }
   
   body {
     @apply bg-background text-foreground;
