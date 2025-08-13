@@ -1,5 +1,7 @@
+"use client"
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 interface product {
   id: number;
@@ -9,6 +11,17 @@ interface product {
   image: string;
   height: number;
 }
+
+const hoverImages = [
+  "/Core_SWB_Drink.png",
+  "/Creations_BBLMMFN_5p3oz_BG_v3.png",
+  "/Creations_APM_5p3oz (1).png"
+];
+
+const getRandomHoverImage = () => {
+  const randomIndex = Math.floor(Math.random() * hoverImages.length);
+  return hoverImages[randomIndex];
+};
 
 const productData: product[] = [
   {
@@ -74,9 +87,31 @@ const productData: product[] = [
 ];
 
 export default function ProductsSections() {
+  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+  const [hoverImage, setHoverImage] = useState<string>("");
+
+  const handleMouseEnter = (id: number) => {
+    setHoveredProduct(id);
+    setHoverImage(getRandomHoverImage());
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredProduct(null);
+  };
+
   return (
-    <div className="min-h-screen w-full py-10 bg-gray-50">
-      <h1 className="text-center text-4xl">
+    <div 
+      className="min-h-screen w-full py-10 bg-gray-50 relative overflow-hidden"
+      style={{
+        backgroundImage: `url('/images${hoverImage}')`,
+        backgroundSize: '80% 80%',
+        backgroundPosition: 'top -300px center',
+        backgroundRepeat: 'no-repeat',
+        backgroundOrigin: 'content-box',
+      }}
+    >
+      <div className="relative z-10">
+      <h1 className="text-center text-5xl font-light text-[#1a3c34]">
         What Chobani® flavor
         <br /> or product are you looking for?
       </h1>
@@ -84,26 +119,30 @@ export default function ProductsSections() {
         <input
           type="text"
           placeholder="Type something ... "
-          className="mt-4 mx-auto w-1/2 rounded-md p-2 placeholder:text-7xl h-38 placeholder:text-gray-200   text-center text-7xl  focus:outline-none "
+          className="mt-3 mx-auto w-1/2 rounded-md p-2 placeholder:text-7xl h-38 placeholder:text-gray-200   text-center text-7xl  focus:outline-none "
         />
       </div>
-      <div className="flex items-end justify-between px-8 mt-28">
+      <div className="flex items-end justify-between px-8 mt-64">
         {productData.map((product) => (
-          <div key={product.id} className="group flex flex-col items-center">
+          <div 
+            key={product.id} 
+            className="group flex flex-col items-center cursor-pointer"
+            onMouseEnter={() => handleMouseEnter(product.id)}
+            onMouseLeave={handleMouseLeave}
+          >
             <Image
               src={product.image}
               alt={product.title}
-              className="w-auto "
+              className="w-auto"
               width={100}
               height={product.height}
             />
-            <h2
-              className="mt-4 h-8 pb-1 rounded-b-xs border-b-4 border-transparent group-hover:border-[#1a3c34] text-[#1a3c34] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-            >
+            <h2 className="mt-4 h-8 rounded-b-xs border-b-8 border-transparent group-hover:border-[#1a3c34] text-[#1a3c34] opacity-0 group-hover:opacity-100 transition-opacity duration-200 pb-16 text-lg font-bold">
               {product.title}
             </h2>
           </div>
         ))}
+        </div>
       </div>
     </div>
   );

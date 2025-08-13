@@ -12,23 +12,21 @@ import { Checkbox } from "@/components/ui/checkbox";
 export function Footer() {
   return (
     <footer className="bg-[#1a3c34] text-white">
-      <div className="container mx-auto px-6 py-12">
-        {/* Main footer content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
-          {/* Newsletter section */}
-          <div className="lg:col-span-5">
+      <div className=" px-12 py-12">
+        <div className="flex justify-between gap-8 mb-8">
+          <div className="flex-1">
             <h3 className="text-lg font-medium mb-4">
               Get the freshest Chobani news
             </h3>
-            <div className="flex gap-2 mb-4">
+            <div className="flex gap-0 mb-4 max-w-[400px]">
               <Input
                 type="email"
                 placeholder="Enter email here"
-                className="bg-transparent border-white/30 text-white placeholder:text-white/70 focus:border-white"
+                className="bg-transparent rounded-none border-0 border-b border-b-white/30 text-white placeholder:text-white/70 focus:border-b-white focus:outline-none"
               />
               <Button
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#2d5a5a] whitespace-nowrap bg-transparent"
+                className="border-white text-white hover:bg-white hover:text-[#2d5a5a] whitespace-nowrap bg-transparent border-0  border-b border-b-white/30 focus:border-b-white focus:outline-none rounded-none font-semibold"
               >
                 Subscribe
               </Button>
@@ -47,51 +45,48 @@ export function Footer() {
               </label>
             </div>
           </div>
-
-          {/* Navigation links */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-8">
-            <div className="space-y-3">
-              <a
-                href="#"
-                className="block text-white hover:text-white/80 transition-colors"
-              >
-                Chobani Café
-              </a>
-              <a
-                href="#"
-                className="block text-white hover:text-white/80 transition-colors"
-              >
-                Foodservice
-              </a>
+          {/* Region selector */} 
+          <div className="flex gap-4 pr-10 text-xl">
+            <div className="flex  gap-8">
+              <div className="space-y-3">
+                <a
+                  href="#"
+                  className="block text-white hover:text-white/80 transition-colors"
+                >
+                  Chobani Café
+                </a>
+                <a
+                  href="#"
+                  className="block text-white hover:text-white/80 transition-colors"
+                >
+                  Foodservice
+                </a>
+              </div>
+              <div className="space-y-3">
+                <a
+                  href="#"
+                  className="block text-white hover:text-white/80 transition-colors"
+                >
+                  Careers
+                </a>
+                <a
+                  href="#"
+                  className="block text-white hover:text-white/80 transition-colors"
+                >
+                  Consumer Care
+                </a>
+              </div>
+              <div className="space-y-3">
+                <a
+                  href="#"
+                  className="block text-white hover:text-white/80 transition-colors"
+                >
+                  Chobani News
+                </a>
+              </div>
             </div>
-            <div className="space-y-3">
-              <a
-                href="#"
-                className="block text-white hover:text-white/80 transition-colors"
-              >
-                Careers
-              </a>
-              <a
-                href="#"
-                className="block text-white hover:text-white/80 transition-colors"
-              >
-                Consumer Care
-              </a>
-            </div>
-            <div className="space-y-3">
-              <a
-                href="#"
-                className="block text-white hover:text-white/80 transition-colors"
-              >
-                Chobani News
-              </a>
-            </div>
-          </div>
-
-          {/* Region selector */}
-          <div className="lg:col-span-2">
             <Select>
-              <SelectTrigger className="bg-transparent border-white/30 text-white">
+              <SelectTrigger className="bg-transparent border-white text-white rounded-none w-[300px] ">
                 <SelectValue placeholder="Choose region" />
               </SelectTrigger>
               <SelectContent>
@@ -165,7 +160,7 @@ export function Footer() {
 
         {/* Copyright and legal links */}
         <div className="border-t border-white/20 pt-6">
-          <div className="text-sm text-white/70 mb-4">
+          <div className="text-sm text-white/70 mt-2 mb-3">
             © 2024 Chobani, LLC. All Rights Reserved.
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-white/70">

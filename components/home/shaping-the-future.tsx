@@ -39,7 +39,7 @@ const chobaniInitiatives = [
 export default function ShapingTheFuture() {
   return (
     <div
-      className="bg-no-repeat bg-cover min-h-screen  container mx-auto pt-20"
+      className="bg-no-repeat bg-cover min-h-screen min-w-screen   max-w-[100vw] overflow-x-hidden pt-20 "
       style={{
         backgroundImage: `url(https://images.ctfassets.net/01to7kbtr3az/1qBB8DT0vw5hCWueGMp3rQ/18082c9c7302037b49ba1d304a917e5f/Shapingthefuture.svg?w=1258)`,
       }}
@@ -47,7 +47,7 @@ export default function ShapingTheFuture() {
       <h1 className="text-[69px] leading-20  font-thin text-center text-white ">
         Chobani is Shaping <br /> the Future of Food
       </h1>
-      <div className="gap-12 flex items-center justify-center  mt-24 px-40">
+      <div className="gap-12 flex items-center justify-center  mt-48 px-40">
         {chobaniInitiatives.map((initiative, index) => (
           <div key={index} className="flex flex-col items-center text-center">
             <Image
@@ -56,9 +56,9 @@ export default function ShapingTheFuture() {
               width={150}
               height={150}
             />
-            <h2 className="text-white text-xl mb-4 mt-4">{initiative.title}</h2>
-            <p className="text-white  tex-center text-sm  mb-8">{initiative.description}</p>
-            <button className=" border-white border-2 text-white py-1 px-2  rounded">
+            <h2 className="text-white text-2xl mb-4 mt-4">{initiative.title}</h2>
+            <p className="text-white  tex-center text-lg  mb-8">{initiative.description}</p>
+            <button className=" border-white border-2 text-lg text-white py-1 px-2  text-md rounded">
               {initiative.buttonText}
             </button>
           </div>

@@ -94,7 +94,7 @@ export default function News() {
 
         <div 
           ref={scrollContainerRef}
-          className="flex gap-2 overflow-x-auto scrollbar-hide px-12"
+          className="flex gap-2 overflow-x-auto scrollbar-hide"
           style={{
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none',
@@ -105,9 +105,9 @@ export default function News() {
               <Image
                 src={news.image}
                 alt="Chobani Product"
-                className="max-w-[220px] min-w-[220px] max-h-[180px] min-h-[180px] object-cover"
+                className="max-w-[220px] min-w-[220px] max-h-[220px] min-h-[220px] object-cover"
                 width={220}
-                height={180}
+                height={220}
               />
               
               <div className="bg-product-content text-white bg-[#002b49] flex flex-col justify-end min-w-[180px]">

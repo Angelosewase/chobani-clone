@@ -47,19 +47,19 @@ const productsData: product[] = [
   },
   {
     id: "5",
-    name: "Chobani Blueberry Greek Yogurt",
+    name: "Chobani Full-Fat Plain Greek Kefir",
     image:
       "https://images.ctfassets.net/01to7kbtr3az/6aOgpWAZE2R4ZT2X4Wc1eO/70f89cba4d1bcd648d44640eaf529069/drinks-750x842-FS_202104_CCraig_PB-Choco_Smoothie_RGB_v2_4x3.jpg?fm=webp",
     price: "10",
-    description: "Chobani Blueberry Greek Yogurt",
+    description: "Chobani Full-Fat Plain Greek Kefirt",
   },
   {
     id: "6",
-    name: "Chobani Raspberry Greek Yogurt",
+    name: "Chobani Full-Fat Plain Greek Kefir",
     image:
       "https://images.ctfassets.net/01to7kbtr3az/6aOgpWAZE2R4ZT2X4Wc1eO/70f89cba4d1bcd648d44640eaf529069/drinks-750x842-FS_202104_CCraig_PB-Choco_Smoothie_RGB_v2_4x3.jpg?fm=webp",
     price: "10",
-    description: "Chobani Raspberry Greek Yogurt",
+    description: "Chobani Full-Fat Plain Greek Kefir",
   },
 ];
 
@@ -98,49 +98,55 @@ export default function ChobaniCooking() {
         />
       </div>
 
-      <div
-        ref={scrollRef}
-        className="flex  gap-2 ml-12 mr-6 overflow-x-scroll  scroll-smooth relative"
-        style={{ scrollBehavior: "smooth", scrollbarWidth: "none" }}
-      >
-        {/* <button
-          className="bg-white px-4 py-2 rounded-full 
-          absolute left-0 "
+      <div className="relative">
+        {/* Left Navigation Button */}
+        <button
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:shadow-xl"
           onClick={() => scroll("left")}
         >
-          <ArrowLeftIcon className="w-6 h-6" />
+          <ArrowLeftIcon className="w-6 h-6 text-[#1a3c34]" />
         </button>
+
+        {/* Right Navigation Button */}
         <button
-          className="bg-white px-4 py-2 rounded-full z-10 absolute right-0"
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:shadow-xl"
           onClick={() => scroll("right")}
         >
-          <ArrowRightIcon className="w-6 h-6" />
-        </button> */}
-        {[...productsData, ...productsData].map((product, index) => (
-          <div
-            className="relative max-w-[300px] flex-shrink-0 bg-white"
-            key={product.id + "-" + index}
-          >
-            {/* Hero Image */}
-            <div className="relative h-72 w-full">
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+          <ArrowRightIcon className="w-6 h-6 text-[#1a3c34]" />
+        </button>
 
-            {/* Recipe Info Banner */}
-            <div className="bg-[#1a3c34] text-white px-6 py-4   text-center">
-              <p className="text-sm font-medium text-slate-300 mb-1">
-                Mains - Dinner / Lunch
-              </p>
-              <h1 className="text-xl font-serif text-white">{product.name}</h1>
+        {/* Products Scroll Container */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6 ml-12 mr-12 overflow-x-scroll scroll-smooth"
+          style={{ scrollBehavior: "smooth", scrollbarWidth: "none" }}
+        >
+          {[...productsData, ...productsData].map((product, index) => (
+            <div
+              className="relative max-w-[350px] flex-shrink-0 bg-white"
+              key={product.id + "-" + index}
+            >
+              {/* Hero Image */}
+              <div className="relative min-h-96 w-full">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
+              {/* Recipe Info Banner */}
+              <div className="bg-[#1a3c34] text-white px-6 py-4 text-center">
+                <p className="text-sm font-medium text-slate-300 mb-1">
+                  Mains - Dinner / Lunch
+                </p>
+                <h1 className="text-xl font-serif text-white">{product.name}</h1>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
