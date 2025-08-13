@@ -98,7 +98,7 @@ export default function ProductsSections() {
               height={product.height}
             />
             <h2
-              className="mt-4 h-8 pb-1 rounded-b-xs border-b-4 border-transparent group-hover:border-green-950 text-green-950 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              className="mt-4 h-8 pb-1 rounded-b-xs border-b-4 border-transparent group-hover:border-[#1a3c34] text-[#1a3c34] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
             >
               {product.title}
             </h2>
