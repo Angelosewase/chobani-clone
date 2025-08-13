@@ -1,3 +1,9 @@
+import { HeroSlider } from "@/components/home/hero";
+
 export default function Home() {
-  return <div>Cobani home page</div>;
+  return (
+    <main className="min-h-screen">
+      <HeroSlider />
+    </main>
+  );
 }
