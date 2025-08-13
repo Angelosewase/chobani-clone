@@ -7,12 +7,23 @@ import Image from "next/image";
 
 export function Header() {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setScrolled(scrollPosition > 100);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // scrolling down
+        setIsVisible(false);
+      } else {
+        // scrolling up
+        setIsVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,15 +32,13 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
-        scrolled
-          ? "opacity-80 transform -translate-y-2"
-          : "opacity-100 transform translate-y-0"
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-500 ease-in-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
       }`}
     >
       {/* Main header */}
       <div className="relative">
-        <div className="flex items-center justify-between px-6 py-2  mx-auto">
+        <div className="flex items-center justify-between px-6 py-2 mx-auto">
           {/* Left Navigation */}
           <nav className="flex items-center space-x-8">
             <button
@@ -85,7 +94,7 @@ export function Header() {
         onMouseEnter={() => setIsProductsOpen(true)}
         onMouseLeave={() => setIsProductsOpen(false)}
       >
-        <div className=" mx-auto px-6 py-8">
+        <div className="mx-auto px-6 py-8">
           <div className="grid grid-cols-5 gap-8">
             {/* Latest Picks */}
             <div className="space-y-4">
