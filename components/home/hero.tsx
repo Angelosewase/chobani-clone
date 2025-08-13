@@ -11,6 +11,7 @@ interface HeroSlide {
   description: string;
   backgroundClass: string;
   imageUrl: string;
+  mobileImageUrl?: string;
   textColor: "light" | "dark";
 }
 
@@ -23,6 +24,7 @@ const slides: HeroSlide[] = [
       "Fuel your day with protein-packed Greek yogurt that delivers exceptional taste and nutrition.",
     backgroundClass: "bg-hero-protein",
     imageUrl: "/images/hero-1.jpeg",
+    mobileImageUrl: "/images/HiPro_JAN_Hero-Carousel_Mobile_v1.webp",
     textColor: "light",
   },
   {
@@ -33,6 +35,7 @@ const slides: HeroSlide[] = [
       "Transform your morning coffee with rich, smooth creamers made from real ingredients.",
     backgroundClass: "bg-hero-creamer",
     imageUrl: "/images/hero-2.jpeg",
+    mobileImageUrl: "/images/2024-Super-Milk-Mobile.webp",
     textColor: "dark",
   },
   {
@@ -120,15 +123,50 @@ export const HeroSlider = () => {
         className={`absolute inset-0 transition-all duration-1000 ease-in-out ${currentSlideData.backgroundClass}`}
       />
       <div className="absolute inset-0 flex justify-center lg:justify-end">
-        <Image
-          src={currentSlideData.imageUrl}
-          alt={currentSlideData.title}
-          className={`min-w-[100vw] min-h-[100vh] transition-all duration-1000 ease-in-out transform ${
-            isTransitioning ? "opacity-0" : "opacity-100"
-          }`}
-          width={1000}
-          height={1000}
-        />
+        <div className="w-full h-full relative">
+          {/* Desktop Image */}
+          <div className="hidden md:block w-full h-full">
+            <Image
+              src={currentSlideData.imageUrl}
+              alt={currentSlideData.title}
+              fill
+              className={`object-cover transition-all duration-1000 ease-in-out ${
+                isTransitioning ? "opacity-0" : "opacity-100"
+              }`}
+              priority
+            />
+          </div>
+          
+          {/* Mobile Image - only shown if mobileImageUrl exists */}
+          {currentSlideData.mobileImageUrl && (
+            <div className="md:hidden w-full h-full">
+              <Image
+                src={currentSlideData.mobileImageUrl}
+                alt={currentSlideData.title}
+                fill
+                className={`object-cover transition-all duration-1000 ease-in-out ${
+                  isTransitioning ? "opacity-0" : "opacity-100"
+                }`}
+                priority
+              />
+            </div>
+          )}
+          
+          {/* Fallback - if no mobile image, show desktop image on mobile too */}
+          {!currentSlideData.mobileImageUrl && (
+            <div className="md:hidden w-full h-full">
+              <Image
+                src={currentSlideData.imageUrl}
+                alt={currentSlideData.title}
+                fill
+                className={`object-cover transition-all duration-1000 ease-in-out ${
+                  isTransitioning ? "opacity-0" : "opacity-100"
+                }`}
+                priority
+              />
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="absolute inset-0 z-10 flex items-end px-6 lg:px-12 bottom-24">
