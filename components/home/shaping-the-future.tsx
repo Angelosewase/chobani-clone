@@ -29,7 +29,7 @@ const chobaniInitiatives = [
   {
     title: "Sustainability",
     description:
-      "At Chobani, we strive to make a positive impact on the people, communities and environment around us because we believe it is business’ responsibility.",
+      "At Chobani, we strive to make a positive impact on the people, communities and environment around us because we believe it is business' responsibility.",
     buttonText: "Read more",
     image:
       "https://images.ctfassets.net/01to7kbtr3az/4HXijcinYStxzmKxowkrNU/ad9651ed78d2cc62459e2a9648f88878/Environmental_Zero_waste_to_landfill_A_website.svg",
@@ -39,26 +39,32 @@ const chobaniInitiatives = [
 export default function ShapingTheFuture() {
   return (
     <div
-      className="bg-no-repeat bg-cover min-h-screen min-w-screen   max-w-[100vw] overflow-x-hidden pt-20 "
+      className="bg-no-repeat bg-cover min-h-screen min-w-screen max-w-[100vw] overflow-x-hidden py-16"
       style={{
         backgroundImage: `url(https://images.ctfassets.net/01to7kbtr3az/1qBB8DT0vw5hCWueGMp3rQ/18082c9c7302037b49ba1d304a917e5f/Shapingthefuture.svg?w=1258)`,
       }}
     >
-      <h1 className="text-[69px] leading-20  font-thin text-center text-white ">
+      <h1 className="text-[69px] leading-[1.1] font-thin text-center text-white mb-24 px-8">
         Chobani is Shaping <br /> the Future of Food
       </h1>
-      <div className="gap-12 flex items-center justify-center  mt-48 px-40">
+      <div className="gap-8 flex items-start justify-center px-12 max-w-9xl mx-auto">
         {chobaniInitiatives.map((initiative, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
-            <Image
-              src={initiative.image}
-              alt={initiative.title}
-              width={150}
-              height={150}
-            />
-            <h2 className="text-white text-2xl mb-4 mt-4">{initiative.title}</h2>
-            <p className="text-white  tex-center text-lg  mb-8">{initiative.description}</p>
-            <button className=" border-white border-2 text-lg text-white py-1 px-2  text-md rounded">
+          <div key={index} className={`flex flex-col items-center text-center max-w-xs ${index === 3 ? 'hidden md:flex' : ''}`}>
+            <div className="mb-6">
+              <Image
+                src={initiative.image}
+                alt={initiative.title}
+                width={120}
+                height={120}
+              />
+            </div>
+            <h2 className="text-white text-xl font-medium mb-4 min-h-[3rem] flex items-center">
+              {initiative.title}
+            </h2>
+            <p className="text-white text-base leading-relaxed mb-6 px-2">
+              {initiative.description}
+            </p>
+            <button className="border-white border-2 text-white py-2 px-6 text-sm rounded hover:bg-white hover:text-gray-800 transition-colors duration-200">
               {initiative.buttonText}
             </button>
           </div>

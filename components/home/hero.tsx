@@ -24,7 +24,7 @@ const slides: HeroSlide[] = [
       "Fuel your day with protein-packed Greek yogurt that delivers exceptional taste and nutrition.",
     backgroundClass: "bg-hero-protein",
     imageUrl: "/images/hero-1.jpeg",
-    mobileImageUrl: "/images/HiPro_JAN_Hero-Carousel_Mobile_v1.webp",
+    mobileImageUrl: "/images/hero-1-responsive.webp",
     textColor: "light",
   },
   {
@@ -35,7 +35,7 @@ const slides: HeroSlide[] = [
       "Transform your morning coffee with rich, smooth creamers made from real ingredients.",
     backgroundClass: "bg-hero-creamer",
     imageUrl: "/images/hero-2.jpeg",
-    mobileImageUrl: "/images/2024-Super-Milk-Mobile.webp",
+    mobileImageUrl: "/images/hero-2-responsive.jpeg",
     textColor: "dark",
   },
   {
@@ -46,6 +46,7 @@ const slides: HeroSlide[] = [
       "Every purchase supports farmers and communities while delivering incredible taste.",
     backgroundClass: "bg-hero-impact",
     imageUrl: "/images/hero-3.jpeg",
+    mobileImageUrl: "/images/hero-3-responsive.jpeg",
     textColor: "light",
   },
   {
@@ -56,7 +57,8 @@ const slides: HeroSlide[] = [
       "Create delicious, nutritious meals with our versatile Greek yogurt products.",
     backgroundClass: "bg-hero-cooking",
     imageUrl: "/images/hero-4.webp",
-    textColor: "dark",
+    mobileImageUrl: "/images/hero-4.webp",
+      textColor: "dark",
   },
 ];
 

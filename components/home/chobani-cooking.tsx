@@ -2,7 +2,8 @@
 
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
+
 
 interface product {
   id: string;
@@ -65,6 +66,23 @@ const productsData: product[] = [
 
 export default function ChobaniCooking() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Set initial value
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -91,10 +109,13 @@ export default function ChobaniCooking() {
           </p>
         </div>
         <Image
-          src="https://images.ctfassets.net/01to7kbtr3az/2fzJGl7iYmZxILTIusWiC6/5d8d02a5461bad74c81795e5660a7ce3/Recipes_illustrations05.svg"
+          src={isMobile 
+            ? "https://images.ctfassets.net/01to7kbtr3az/18pFID5FFOY8mE2Hmw12a7/fd44114533d37af69a68d2bec1eb4114/Recipes_illustrations05-iphone.svg" 
+            : "https://images.ctfassets.net/01to7kbtr3az/2fzJGl7iYmZxILTIusWiC6/5d8d02a5461bad74c81795e5660a7ce3/Recipes_illustrations05.svg"}
           alt=""
-          width={500}
-          height={500}
+          width={isMobile ?200 : 500}
+          height={isMobile ? 200 : 500}
+          className="transition-all duration-300"
         />
       </div>
 

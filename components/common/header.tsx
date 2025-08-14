@@ -75,25 +75,25 @@ export function Header() {
     {
       id: "oatmilk",
       title: "Oatmilk",
-      image: "/placeholder.svg?height=160&width=160",
+      image: "/images/HiPro_VN_32oz_2025_RENDER.png",
       subcategories: ["Oatmilk"]
     },
     {
       id: "greek",
       title: "Greek Yogurt",
-      image: "/placeholder.svg?height=160&width=160",
+      image: "/images/HiPro_VN_32oz_2025_RENDER.png",
       subcategories: ["High Protein", "Flip®", "Less Sugar*", "Zero Sugar**", "Creations™", "Greek Yogurt"]
     },
     {
       id: "drinks",
       title: "Greek Yogurt Drinks",
-      image: "/placeholder.svg?height=160&width=160",
+      image: "/images/HiPro_VN_32oz_2025_RENDER.png",
       subcategories: ["High Protein", "Greek Yogurt"]
     },
     {
       id: "creamers",
       title: "Creamers",
-      image: "/placeholder.svg?height=160&width=160",
+      image: "/images/HiPro_VN_32oz_2025_RENDER.png",
       subcategories: ["Dairy", "Zero Sugar*"]
     }
   ];
