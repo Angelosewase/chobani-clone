@@ -245,7 +245,7 @@ export function Header() {
           >
             {/* Backdrop */}
             <div
-              className="absolute inset-0 bg-black bg-opacity-50"
+              className="absolute inset-0 bg-black/10"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 setMobileSubMenu(null);
